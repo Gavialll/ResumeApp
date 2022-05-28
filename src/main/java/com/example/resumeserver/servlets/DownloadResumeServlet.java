@@ -13,6 +13,7 @@ public class DownloadResumeServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html");
         ServletOutputStream out = response.getOutputStream();
+
         byte[] byteArray = Files.readAllBytes(Path.of("/Users/andrijdutko/Desktop/ResumeServer/src/main/resources/Andrii Dutko Java Developer.pdf"));
 
         response.setContentType("application/vnd.pdf");
