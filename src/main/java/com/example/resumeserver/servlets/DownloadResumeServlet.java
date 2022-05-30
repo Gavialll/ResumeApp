@@ -14,12 +14,14 @@ public class DownloadResumeServlet extends HttpServlet {
         response.setContentType("text/html");
         ServletOutputStream out = response.getOutputStream();
 
-        byte[] byteArray = Files.readAllBytes(Path.of("/Users/andrijdutko/Desktop/ResumeServer/src/main/resources/Andrii Dutko Java Developer.pdf"));
+//        Path path = FileSystems.getDefault().getPath("logs", "access.log");
+//        BufferedReader reader = Files.newBufferedReader(path, StandardCharsets.UTF_8);
+//        byte[] byteArray = Files.readAllBytes(Path.of("/Users/andrijdutko/Desktop/ResumeServer/src/main/resources/Andrii Dutko Java Developer.pdf"));
 
-        response.setContentType("application/vnd.pdf");
-        response.setHeader("Content-Disposition", "attachment; filename=\"" + "Andrii Dutko Java Developer.pdf" + "\"");
-        out.write(byteArray);
-        out.flush();
-        out.close();
+//        response.setContentType("application/vnd.pdf");
+//        response.setHeader("Content-Disposition", "attachment; filename=\"" + "Andrii Dutko Java Developer.pdf" + "\"");
+//        out.write(byteArray);
+//        out.flush();
+//        out.close();
     }
 }
