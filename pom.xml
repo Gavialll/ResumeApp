@@ -48,6 +48,8 @@
                     <target>8</target>
                 </configuration>
             </plugin>
+<!--            Plugin for start tomcat on server-->
+<!--            and specific "Procfile" for deploy on heroku-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
