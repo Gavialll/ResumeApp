@@ -132,5 +132,7 @@
     #form > div > input{
         width: 46%;
     }
-
+    .background > div{
+        margin-bottom: 40px;
+    }
 }
