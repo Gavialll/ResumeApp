@@ -74,7 +74,7 @@ getById('send-message').addEventListener('click',async () => {
         message: getById('message').value
     }
 
-    const url = 'http://localhost:8080/send-email';
+    const url = 'https://andriidutko.herokuapp.com/send-email';
     try {
         const response = await fetch(url, {
             method: 'POST',

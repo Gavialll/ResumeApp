@@ -7,21 +7,19 @@ import javax.servlet.ServletOutputStream;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 
-@WebServlet(name = "helloServlet", value = "/download")
+@WebServlet(name = "Download", value = "/download")
 public class DownloadResumeServlet extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html");
         ServletOutputStream out = response.getOutputStream();
 
-//        Path path = FileSystems.getDefault().getPath("logs", "access.log");
-//        BufferedReader reader = Files.newBufferedReader(path, StandardCharsets.UTF_8);
-//        byte[] byteArray = Files.readAllBytes(Path.of("/Users/andrijdutko/Desktop/ResumeServer/src/main/resources/Andrii Dutko Java Developer.pdf"));
+        byte[] byteArray = Files.readAllBytes(Path.of("/Users/andrijdutko/Desktop/ResumeServer/src/main/resources/Andrii Dutko Java Developer.pdf"));
 
-//        response.setContentType("application/vnd.pdf");
-//        response.setHeader("Content-Disposition", "attachment; filename=\"" + "Andrii Dutko Java Developer.pdf" + "\"");
-//        out.write(byteArray);
-//        out.flush();
-//        out.close();
+        response.setContentType("application/vnd.pdf");
+        response.setHeader("Content-Disposition", "attachment; filename=\"" + "Andrii Dutko Java Developer.pdf" + "\"");
+        out.write(byteArray);
+        out.flush();
+        out.close();
     }
 }
