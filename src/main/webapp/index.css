@@ -233,6 +233,11 @@ header > div{
     height: 125px;
     border-bottom: solid 2px #5a5a5a76;
 }
+.my-info>div{
+    display: flex;
+    width: 40%;
+    justify-content: space-around;
+}
 .info-elem{
     color: #5a5a5a;
     padding-left: 30px;
@@ -280,6 +285,7 @@ header > div{
 }
 .wrapper-about-me-info>img{
     width: 35%;
+    height:  max-content;
     border: solid 1px white;
     box-shadow: 0 0 1px black;
 }
@@ -329,7 +335,6 @@ header > div{
 .education-wrapper-right > div{
     width: 90%;
     height: max-content;
-    display: flex;
 }
 .education-wrapper-right > div > div{
     position: relative;
@@ -489,6 +494,7 @@ header > div{
     border: none;
     border-bottom: 1px solid #b2b2b2;
     color: #151d2a;
+    padding: 3px;
 }
 #form > div{
     margin-bottom: 40px;
@@ -502,14 +508,14 @@ header > div{
     margin-bottom: 10px;
 }
 #message{
-    min-width: 100%;
+    min-width: 99%;
     max-width: 100%;
     min-height: 150px;
     max-height: 500px;
     color: #151d2a;
     background-color: whitesmoke;
-    width: 100%;
     border: 1px solid #b2b2b2;
+    padding: 3px;
 }
 #message:focus{
     border: none;
@@ -765,4 +771,10 @@ footer>h2{
 #comlete:hover .send-message-black{
     top: 64px;
     transition: 0.3s;
+}
+.showMobile{
+    display: none;
+}
+.showComputer{
+    display: flex;
 }

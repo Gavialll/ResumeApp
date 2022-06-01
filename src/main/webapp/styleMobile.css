@@ -1,0 +1,135 @@
+@media screen and (max-width: 900px) {
+    .wrapper-about-me-info{
+        flex-direction: column;
+    }
+    main{
+        min-width: 100%;
+    }
+    footer{
+        min-width: 100%;
+    }
+    .logo {
+        width: 100%;
+    }
+    .my-info{
+        flex-direction: column;
+    }
+    .name{
+        font-size: 40px;
+    }
+    .right{
+        height: 47px;
+        width: 55px;
+        left: -10px;
+    }
+    .left{
+        height: 47px;
+        width: 55px;
+        right: -10px;
+    }
+    header > div{
+        width: 95%;
+    }
+    .element{
+        width: 95%;
+    }
+    .element > div > h2{
+        font-size: 30px;
+    }
+    .element > div > h3{
+        font-size: 20px;
+    }
+    .wrapper-about-me-info>div{
+        margin-top: 30px;
+        width: 100%;
+    }
+    .wrapper-about-me-info>img{
+        width: 100%;
+    }
+    .skils > div > span{
+        width: 50%;
+    }
+    .my-info>div{
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .my-info{
+        margin-top: 0;
+        height: max-content;
+    }
+    .contacts_wrapper{
+        flex-direction: column-reverse;
+    }
+    #form{
+        width: 100%;
+    }
+    .lisks{
+        flex-direction: row;
+        width: 100%;
+        margin-bottom: 40px;
+    }
+    .info-elem{
+        padding-left: 10px;
+    }
+    .language{
+        margin-left: 40px;
+    }
+    .wrapper-resume-info{
+        align-items: start;
+    }
+    .education-wrapper-right{
+        width: 100%;
+        padding-top: 0;
+        flex-direction: column;
+    }
+    .mirror-right{
+        border-left: solid 1px #151d2a;
+        border-right: none;
+        justify-content: end;
+    }
+    .circle{
+        top: 89px;
+    }
+    .circle-mirror{
+        left: -11px;
+        top: 89px;
+    }
+    .arroy-left-mirror{
+        left: -24px;
+        transform: rotate(90deg);
+    }
+    .education-wrapper-right > div{
+        justify-content: center;
+        display: flex;
+    }
+    .education-wrapper-right > div > p{
+        color: whitesmoke;
+        font-size: 14px;
+        font-weight: 500;
+    }
+    .date{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        background-color: #151d2a;
+        border: 1px solid #151d2a;
+        width: 75%;
+        padding: 0 25px 0 25px;
+    }
+    .arroy-right{
+        top: 29px;
+    }
+    .arroy-left-mirror{
+        top: 29px;
+    }
+    .showMobile{
+        display: flex;
+    }
+    .showComputer{
+        display: none;
+    }
+    #form > div > input{
+        width: 46%;
+    }
+}
