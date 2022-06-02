@@ -31,13 +31,13 @@ getById('Skills').addEventListener('click', () => {
     getById('menu').classList.toggle("showMenu")
 })
 
-// getById('Projects').addEventListener('click', () => {
-//     setScroll(6)
-// getById('menu').classList.toggle("showMenu")
-// })
+getById('Projects').addEventListener('click', () => {
+    setScroll(6)
+getById('menu').classList.toggle("showMenu")
+})
 
 getById('Contact').addEventListener('click', () => {
-    setScroll(6)
+    setScroll(7)
     getById('menu').classList.toggle("showMenu")
 })
 
