@@ -61,7 +61,8 @@ function setScroll(id) {
     }
     height -= 40;
     window.scroll({top: height, behavior: `smooth`})
-    // console.log(height)
+
+    getById('menu').classList.toggle("showMenu")
 }
 
 function getFullHeightElem(element) {
