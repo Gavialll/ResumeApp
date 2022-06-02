@@ -15,7 +15,7 @@ public class DownloadResumeServlet extends HttpServlet {
         response.setContentType("text/html");
         ServletOutputStream out = response.getOutputStream();
 
-        File fileRes = new File("/ResumeServer/src/main/webapp/Andrii Dutko Java Developer.pdf");
+        File fileRes = new File("https://andriidutko.herokuapp.com/icon/Andrii%20Dutko%20Java%20Developer.pdf");
         System.out.println(fileRes.getAbsolutePath());
 
         FileInputStream file = new FileInputStream(fileRes);
