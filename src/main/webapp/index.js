@@ -13,26 +13,32 @@ getById('up').addEventListener('click', () => {
 
 getById('About_Me').addEventListener('click', () => {
     setScroll(1)
+    getById('menu').classList.toggle("showMenu")
 })
 
 getById('Language').addEventListener('click', () => {
     setScroll(3)
+    getById('menu').classList.toggle("showMenu")
 })
 
 getById('Resume').addEventListener('click', () => {
     setScroll(4)
+    getById('menu').classList.toggle("showMenu")
 })
 
 getById('Skills').addEventListener('click', () => {
     setScroll(5)
+    getById('menu').classList.toggle("showMenu")
 })
 
 // getById('Projects').addEventListener('click', () => {
 //     setScroll(6)
+// getById('menu').classList.toggle("showMenu")
 // })
 
 getById('Contact').addEventListener('click', () => {
     setScroll(6)
+    getById('menu').classList.toggle("showMenu")
 })
 
 getById('learn-more').addEventListener('click', () => {
@@ -61,8 +67,6 @@ function setScroll(id) {
     }
     height -= 40;
     window.scroll({top: height, behavior: `smooth`})
-
-    getById('menu').classList.toggle("showMenu")
 }
 
 function getFullHeightElem(element) {
