@@ -94,11 +94,10 @@ header > div{
     width: 100%;
     height: 100vh;
     background-image: url(/icon/AndriiBackground.jpg);
-    min-height: 500px;
     background-attachment: fixed;
-    background-position: center;
+    background-position: unset;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: auto;
 }
 .logo{
     position: relative;
