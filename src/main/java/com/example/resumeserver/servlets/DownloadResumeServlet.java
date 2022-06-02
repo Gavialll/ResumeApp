@@ -4,6 +4,7 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -13,10 +14,13 @@ public class DownloadResumeServlet extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html");
-        ServletOutputStream out = response.getOutputStream();
 
-        File fileRes = new File("https://andriidutko.herokuapp.com/icon/Andrii%20Dutko%20Java%20Developer.pdf");
-        System.out.println(fileRes.getAbsolutePath());
+        ServletOutputStream out = response.getOutputStream();
+        ServletContext sc = request.getServletContext();
+        String absolutePathTomcat = sc.getRealPath("/icon/Andrii Dutko Java Developer.pdf");
+        System.out.println(absolutePathTomcat);
+
+        File fileRes = new File(absolutePathTomcat);
 
         FileInputStream file = new FileInputStream(fileRes);
 
