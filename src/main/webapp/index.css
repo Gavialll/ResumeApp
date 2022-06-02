@@ -778,3 +778,6 @@ footer>h2{
 .showComputer{
     display: flex;
 }
+.italic{
+    font-style: italic;
+}
