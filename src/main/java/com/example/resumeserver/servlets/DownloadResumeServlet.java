@@ -3,6 +3,7 @@ package com.example.resumeserver.servlets;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -14,7 +15,12 @@ public class DownloadResumeServlet extends HttpServlet {
         response.setContentType("text/html");
         ServletOutputStream out = response.getOutputStream();
 
-        byte[] byteArray = Files.readAllBytes(Path.of("/Andrii Dutko Java Developer.pdf"));
+        File fileRes = new File("/ResumeServer/src/main/webapp/Andrii Dutko Java Developer.pdf");
+        System.out.println(fileRes.getAbsolutePath());
+
+        FileInputStream file = new FileInputStream(fileRes);
+
+        byte[] byteArray = file.readAllBytes();
 
         response.setContentType("application/vnd.pdf");
         response.setHeader("Content-Disposition", "attachment; filename=\"" + "Andrii Dutko Java Developer.pdf" + "\"");
