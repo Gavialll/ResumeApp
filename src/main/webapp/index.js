@@ -40,11 +40,12 @@ getById('learn-more').addEventListener('click', ()=>{
     setScroll(1)
 })
 
-getById('alert_wrapper').addEventListener('click', () => {
+function addListener(){
     getById('alert_wrapper').style.display = 'none'
     getById('alert_loading_img').style.display = 'none'
     getById('alert').style.display = 'none'
-})
+    getById('alert_wrapper').removeEventListener('click', addListener)
+}
 
 function setScroll(id){
     let elements = document.querySelectorAll(".sc");
@@ -87,6 +88,8 @@ getById('send-message').addEventListener('click',async () => {
 
         const json = await response;
         getById('alert_loading_img').style.display = 'none'
+
+        getById('alert_wrapper').addEventListener('click', addListener)
 
         if(json.status === 200){
             getById('alert').style.display = 'flex'
