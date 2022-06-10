@@ -1,15 +1,10 @@
 let getById = id => document.getElementById(id);
 
-getById('btnMenu').addEventListener('click', () => getById('menu').classList.toggle("showMenu"));
-
-window.addEventListener(`scroll`, (event) => {
-    if (window.scrollY > 110) getById('up').style.display = 'block';
-    else getById('up').style.display = 'none'
-});
-
-getById('up').addEventListener('click', () => {
-    window.scroll({top: 0, behavior: `smooth`})
-});
+let elemId = localStorage.getItem('id');
+if(elemId > 0){
+    setScroll(elemId)
+    localStorage.setItem('id', -1);
+}
 
 getById('About_Me').addEventListener('click', () => {
     setScroll(1)
@@ -31,13 +26,13 @@ getById('Skills').addEventListener('click', () => {
     getById('menu').classList.toggle("showMenu")
 })
 
-getById('Projects').addEventListener('click', () => {
-    setScroll(6)
-getById('menu').classList.toggle("showMenu")
-})
+// getById('Projects').addEventListener('click', () => {
+//     setScroll(6)
+// getById('menu').classList.toggle("showMenu")
+// })
 
 getById('Contact').addEventListener('click', () => {
-    setScroll(7)
+    setScroll(6)
     getById('menu').classList.toggle("showMenu")
 })
 
@@ -72,7 +67,6 @@ function setScroll(id) {
 function getFullHeightElem(element) {
     let marginLeft = parseInt(getComputedStyle(element, true).marginTop);
     let marginRight = parseInt(getComputedStyle(element, true).marginBottom);
-    console.log(element.offsetHeight + marginLeft + marginRight)
     return element.offsetHeight + marginLeft + marginRight;
 }
 
@@ -165,8 +159,3 @@ const validateEmail = (email) => {
             /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
         );
 };
-
-
-// getById('send-message').disabled = true;
-
-

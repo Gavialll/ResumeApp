@@ -1,91 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;800&display=swap');
-*{
-    margin: 0;
-    padding: 0;
-    font-family: 'Raleway', sans-serif;
-}
-main{
-    min-width: 900px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-body{
-    background-color: whitesmoke;
-    position: relative;
-}
-.language{
-    font-size: 18px;
-    margin-left:130px;
-}
-.language>li{
-    margin-top: 15px;
-    font-size: 18px;
-
-}
-.back-up{
-    z-index: 4;
-    border: none;
-    width: 50px;
-    height: 50px;
-    background-color: #151d2a78;
-    position: fixed;
-    bottom: 50px;
-    right: 20px;
-    transition: 0.8s;
-}
-.back-up:hover {
-    background-color: #0a0e15;
-    transition: 0.8s;
-}
-.back-up:hover .back-up-img{
-    transform: translateY(-6px);
-    transition: 0.8s;
-}
-.back-up-img{
-    transition: 0.8s;
-}
-.header-name{
-    color: #151d2a;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-header{
-    z-index: 1;
-    width: 100%;
-    position: fixed;
-    display: flex;
-    justify-content: center;
-    background-color: whitesmoke;
-    height: max-content;
-}
-.wrapper-header{
-    display: flex;
-    width: 300px;
-    justify-content: space-evenly;
-}
-.bar{
-    background-image: url(/icon/bars.svg);
-    transition: 0.3s;
-}
-.bar:hover{
-    background-image: url(/icon/list-ui-alt.svg);
-    transition: 0.3s;
-}
-#btnMenu{
-    width: 40px;
-    height: 40px;
-    border: none;
-    background-color: whitesmoke;
-}
-header > div{
-    width: 90%;
-    display: flex;
-    justify-content: space-between;
-    height: 50px;
-    align-items: center;
-}
 .background{
     display: flex;
     justify-content: end;
@@ -98,6 +10,15 @@ header > div{
     background-position: unset;
     background-repeat: no-repeat;
     background-size: auto;
+}
+.language{
+    font-size: 18px;
+    margin-left:130px;
+}
+.language>li{
+    margin-top: 15px;
+    font-size: 18px;
+
 }
 .logo{
     position: relative;
@@ -251,31 +172,6 @@ header > div{
 }
 .info-elem>h3{
     font-weight: 500;
-}
-.element{
-    position: relative;
-    width: 80%;
-    margin-bottom: 40px;
-}
-.element > div > h2{
-    color: #151d2a;
-    margin-top: 20px;
-    width: max-content;
-    font-size: 36px;
-    border-bottom: solid 1px #5a5a5a76;
-}
-.element > div > h3{
-    color: #151d2a;
-    margin-top: 20px;
-    width: max-content;
-    font-size: 22px;
-    font-weight: 500;
-    margin-left: 8px;
-}
-.text-wrapper{
-    display: flex;
-    align-items: center;
-    margin-bottom: 40px;
 }
 .wrapper-about-me-info{
     margin-top: 40px;
@@ -527,40 +423,6 @@ header > div{
     outline: none;
     border-bottom: 1px solid black;
 }
-#send-message{
-    margin-top: 40px;
-    position: relative;
-    overflow: hidden;
-    color: #151d2a;
-    background-color: rgba(255, 0, 0, 0);
-    width: 290px;
-    height: 65px;
-    border: solid 1px #b2b2b2;
-}
-.send-message-black{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: 0.3s;
-}
-.send-message-white{
-    transition: 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #151d2a;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    color: whitesmoke;
-    top: 0;
-    left: 290px;
-}
 #send-message:hover .send-message-white{
     left: 0;
     transition: 0.3s;
@@ -569,34 +431,14 @@ header > div{
     top: 64px;
     transition: 0.3s;
 }
-.flex{
-    display: flex;
-    justify-content: center;
-}
-footer{
-    min-width: 900px;
-    width: 100%;
-    height: 70px;
-    background-image: url(/icon/backgroung.png);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    /* background-repeat: round; */
-    background-size: cover;
-}
-footer>h2{
-    color: whitesmoke;
-    font-weight: 500;
-}
 .projects-wrapper{
     margin-top: 40px;
     display: flex;
     justify-content: space-between;
 }
-.projects-wrapper > div{
+.projects-wrapper > a{
+    text-decoration: none;
+    color: #151d2a !important;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -604,11 +446,11 @@ footer>h2{
     border: 1px solid #b2b2b2;
     transition: 0.8s;
 }
-.projects-wrapper > div:hover{
+.projects-wrapper > a:hover{
     box-shadow: 0 0 10px #151d2a;
     transition: 0.8s;
 }
-.projects-wrapper > div > h2{
+.projects-wrapper > a > h2{
     font-size: 18px;
     width: 100%;
     display: flex;
@@ -620,45 +462,11 @@ footer>h2{
     background-color: #151d2a;
     color: whitesmoke;
 }
-.projects-wrapper > div > p{
+.projects-wrapper > a > p{
     margin: 10px;
 }
-.projects-wrapper > div > img{
+.projects-wrapper > a > img{
     margin: 20px;
-}
-.menu{
-    z-index: 3;
-    transform: translateX(90px);
-    transition: 0.5s;
-    border-left: 1px solid #151d2a;
-    margin-top: 50px;
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 90px;
-    height: 100%;
-    background-color: whitesmoke;   
-}
-.send-message{
-    border: none;
-    position: relative;
-    overflow: hidden;
-    color: #151d2a;
-    background-color: rgba(255, 0, 0, 0);
-    width: 90px;
-    height: 65px;
-}
-.send-message:hover .send-message-white{
-    left: 0;
-    transition: 0.3s;
-}
-.send-message:hover .send-message-black{
-    top: 64px;
-    transition: 0.3s;
-}
-.showMenu{
-    transform: translateX(0);
-    transition: 0.5s;
 }
 .lisks{
     display: flex;
@@ -678,34 +486,6 @@ footer>h2{
 .contacts_wrapper{
     display: flex;
     justify-content: space-between;
-}
-.lisks_footer{
-    display: flex;
-    width: 30%;
-    justify-content: space-evenly;
-    align-items: center;
-}
-.lisks_footer>a>img{
-    border-radius: 50%;
-    transition: 0.8s;
-}
-.lisks_footer>a>img:hover{
-    box-shadow: 0 0 10px #ffffff;
-    transition: 0.8s;
-}
-.lisks_header{
-    display: flex;
-    width: 20%;
-    justify-content: space-evenly;
-    align-items: center;
-}
-.lisks_header>a>img{
-    border-radius: 50%;
-    transition: 0.8s;
-}
-.lisks_header>a>img:hover{
-    box-shadow: 0 0 10px #151d2a;
-    transition: 0.8s;
 }
 #alert_wrapper{
     display: none;
