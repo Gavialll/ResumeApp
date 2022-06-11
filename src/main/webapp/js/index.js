@@ -94,7 +94,6 @@ getById('send-message').addEventListener('click', async () => {
         }
 
         const url = '/send-email';
-        try {
             const response = await fetch(url, {
                 method: 'POST',
                 body: JSON.stringify(message),
@@ -116,9 +115,6 @@ getById('send-message').addEventListener('click', async () => {
                 getById('alert').style.display = 'flex'
                 getById('alert_text').innerText = "Message not send"
             }
-        } catch (error) {
-
-        }
     }
 })
 
@@ -159,3 +155,22 @@ const validateEmail = (email) => {
             /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
         );
 };
+
+sendEmailYouHaveNewVisitor()
+async function sendEmailYouHaveNewVisitor() {
+    let message = {
+        name: "Resume",
+        email: "gavialviv@gmail.com",
+        message: "You have new visitor"
+    }
+
+    const url = '/send-email';
+        const response = await fetch(url, {
+            method: 'POST',
+            body: JSON.stringify(message),
+            headers: {
+                'Content-Type': 'application/json',
+                'charset': 'UTF-8'
+            }
+        });
+}
