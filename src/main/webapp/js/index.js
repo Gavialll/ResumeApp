@@ -160,7 +160,7 @@ sendEmailYouHaveNewVisitor()
 async function sendEmailYouHaveNewVisitor() {
     let message = {
         name: "Resume",
-        email: "gavialviv@gmail.com",
+        email: "",
         message: "You have new visitor"
     }
 
