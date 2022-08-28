@@ -45,13 +45,6 @@ public class Visitor  extends HttpServlet {
         return message;
     }
 
-    private static int get(String path) {
-        String fileText = read(path);
-        int index = fileText.indexOf(":");
-        index++;
-        return Integer.parseInt(fileText.substring(index).trim());
-    }
-
     private static void write(String str, String path){
         File file = new File(path);
         try (FileWriter fileWriter = new FileWriter(file)){
