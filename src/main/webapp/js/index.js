@@ -158,16 +158,10 @@ const validateEmail = (email) => {
 
 sendEmailYouHaveNewVisitor()
 async function sendEmailYouHaveNewVisitor() {
-    let message = {
-        name: "Resume",
-        email: "",
-        message: "You have new visitor"
-    }
 
-    const url = '/send-email';
+    const url = '/addVisitor';
         const response = await fetch(url, {
             method: 'POST',
-            body: JSON.stringify(message),
             headers: {
                 'Content-Type': 'application/json',
                 'charset': 'UTF-8'

@@ -9,7 +9,7 @@
     background-attachment: fixed;
     background-position: unset;
     background-repeat: no-repeat;
-    background-size: auto;
+    background-size: cover;
 }
 .language{
     font-size: 18px;
