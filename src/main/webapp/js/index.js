@@ -156,15 +156,40 @@ const validateEmail = (email) => {
         );
 };
 
-sendEmailYouHaveNewVisitor()
-async function sendEmailYouHaveNewVisitor() {
+function sendEmailYouHaveNewVisitor(location) {
 
     const url = '/addVisitor';
-        const response = await fetch(url, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'charset': 'UTF-8'
-            }
-        });
+    fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'charset': 'UTF-8'
+        },
+        body: JSON.stringify(location)
+    });
 }
+
+displayPosition();
+async function displayPosition() {
+    let lat;
+    let lon;
+    navigator.geolocation.getCurrentPosition( pos => {
+        lat = pos.coords.latitude;
+        lon = pos.coords.longitude
+        fetch("https://api.geoapify.com/v1/geocode/reverse?lat=" + lat + "&lon=" + lon + "&apiKey=1419b4e9e48a46139c62efbfe5cdcad2", requestOptions)
+            .then(response => response.json())
+            .then(result => {
+                sendEmailYouHaveNewVisitor({
+                    city: result.features[0].properties.city,
+                    country: result.features[0].properties.country,
+                    street: result.features[0].properties.street
+                })
+            })
+            .catch(error => console.log('Location not found', error));
+    }, () => console.log("Location not found"));
+
+    var requestOptions = {
+        method: 'GET',
+    };
+}
+

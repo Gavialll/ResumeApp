@@ -5,9 +5,9 @@ import org.postgresql.Driver;
 import java.sql.*;
 
 public class DataBase {
-    private final String url = "jdbc:postgresql://ec2-52-212-228-71.eu-west-1.compute.amazonaws.com:5432/d1nl565c8vgbgm";
-    private final String user = "fbrfbhbwoicuqg";
-    private final String password = "6c3d2409c6735d8348487f69ea985c3426caa1caac46cd7afd08530ebade2131";
+    private final String url = "jdbc:postgresql://ec2-54-220-255-121.eu-west-1.compute.amazonaws.com:5432/d8pr1qp61dee7o";
+    private final String user = "dqratdzdcapspm";
+    private final String password = "476f7943073c2a6211d9d761da458f1f0f5af1283b6edb0dd9733b6e1594580d";
 
     public DataBase() throws SQLException {
         DriverManager.registerDriver(new Driver());

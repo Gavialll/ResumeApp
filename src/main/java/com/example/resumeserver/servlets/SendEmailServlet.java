@@ -25,6 +25,7 @@ public class SendEmailServlet extends HttpServlet {
                     .send(message.getEmail(), message.getName(), message.getMessage());
 
             response.setStatus(200);
+            System.out.println("in servlet");
         }catch(IOException exception){
             response.setStatus(400);
         }
