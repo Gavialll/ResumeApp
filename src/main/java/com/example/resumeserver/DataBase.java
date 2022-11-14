@@ -1,21 +1,21 @@
-package com.example.resumeserver.jdbc;
+package com.example.resumeserver;
 
 import org.postgresql.Driver;
 
 import java.sql.*;
+import static com.example.resumeserver.dao.DataBase.URL;
+import static com.example.resumeserver.dao.DataBase.PASSWORD;
+import static com.example.resumeserver.dao.DataBase.USER;
 
 public class DataBase {
-    private final String url = "jdbc:postgresql://ec2-54-220-255-121.eu-west-1.compute.amazonaws.com:5432/d8pr1qp61dee7o";
-    private final String user = "dqratdzdcapspm";
-    private final String password = "476f7943073c2a6211d9d761da458f1f0f5af1283b6edb0dd9733b6e1594580d";
-
     public DataBase() throws SQLException {
         DriverManager.registerDriver(new Driver());
     }
 
+    // Get size visitors
     public int getCount() throws SQLException {
         int count;
-        Connection connection = DriverManager.getConnection(url,user, password);
+        Connection connection = DriverManager.getConnection(URL,USER, PASSWORD);
         Statement st = connection.createStatement();
         ResultSet rs = st.executeQuery("select * from Count where id = 0");
         rs.next();
@@ -26,8 +26,9 @@ public class DataBase {
         return count;
     }
 
+    // Set size visitors.
     public void setCount(int count) throws SQLException {
-        Connection connection = DriverManager.getConnection(url,user, password);
+        Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);
         Statement st = connection.createStatement();
         st.executeUpdate("update count set count = " + count + " where id = 0;");
         st.close();

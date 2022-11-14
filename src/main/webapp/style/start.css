@@ -5,6 +5,7 @@
     font-family: 'Raleway', sans-serif;
 }
 main{
+    min-height: calc(100vh - 120px);
     min-width: 900px;
     display: flex;
     flex-direction: column;

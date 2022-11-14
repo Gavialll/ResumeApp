@@ -1,4 +1,4 @@
-package com.example.resumeserver.components;
+package com.example.resumeserver.dto;
 
 public class EmailDto {
     private String name;

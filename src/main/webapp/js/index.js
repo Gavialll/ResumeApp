@@ -1,5 +1,6 @@
 let getById = id => document.getElementById(id);
 
+/** Scroll navigation of menu ---------------------------------------------------*/
 let elemId = localStorage.getItem('id');
 if(elemId > 0){
     setScroll(elemId)
@@ -26,10 +27,9 @@ getById('Skills').addEventListener('click', () => {
     getById('menu').classList.toggle("showMenu")
 })
 
-// getById('Projects').addEventListener('click', () => {
-//     setScroll(6)
-// getById('menu').classList.toggle("showMenu")
-// })
+getById('ForExample').addEventListener('click', () => {
+    window.location.href = "/for_example";
+})
 
 getById('Contact').addEventListener('click', () => {
     setScroll(6)
@@ -39,37 +39,13 @@ getById('Contact').addEventListener('click', () => {
 getById('learn-more').addEventListener('click', () => {
     setScroll(1)
 })
+/**------------------------------------------------------------------------------*/
 
-function addListener() {
-    getById('alert_wrapper').style.display = 'none'
-    getById('alert_loading_img').style.display = 'none'
-    getById('alert').style.display = 'none'
-    getById('alert_wrapper').removeEventListener('click', addListener)
-    getById('name').value = ""
-    getById('email').value = ""
-    getById('message').value = ""
-    getById('name').style.borderBottom = "1px solid #b2b2b2";
-    getById('email').style.borderBottom = "1px solid #b2b2b2";
-    getById('message').style.border = "1px solid #b2b2b2";
-}
+/** Send location ---------------------------------------------------------------*/
+    sendUserPosition();
+/** -----------------------------------------------------------------------------*/
 
-function setScroll(id) {
-    let elements = document.querySelectorAll(".sc");
-    let height = 0;
-    for (let i = 0; i < elements.length; i++) {
-        if (elements[i] === elements[id]) break
-        height += getFullHeightElem(elements[i]);
-    }
-    height -= 40;
-    window.scroll({top: height, behavior: `smooth`})
-}
-
-function getFullHeightElem(element) {
-    let marginLeft = parseInt(getComputedStyle(element, true).marginTop);
-    let marginRight = parseInt(getComputedStyle(element, true).marginBottom);
-    return element.offsetHeight + marginLeft + marginRight;
-}
-
+/** Send email ------------------------------------------------------------------*/
 getById('send-message').addEventListener('click', async () => {
     let count = 0;
 
@@ -94,27 +70,27 @@ getById('send-message').addEventListener('click', async () => {
         }
 
         const url = '/send-email';
-            const response = await fetch(url, {
-                method: 'POST',
-                body: JSON.stringify(message),
-                headers: {
-                    'Content-Type': 'application/json',
-                    'charset': 'UTF-8'
-                }
-            });
-
-            const json = await response;
-            getById('alert_loading_img').style.display = 'none'
-
-            getById('alert_wrapper').addEventListener('click', addListener)
-
-            if (json.status === 200) {
-                getById('alert').style.display = 'flex'
-                getById('alert_text').innerText = "Message was send"
-            } else {
-                getById('alert').style.display = 'flex'
-                getById('alert_text').innerText = "Message not send"
+        const response = await fetch(url, {
+            method: 'POST',
+            body: JSON.stringify(message),
+            headers: {
+                'Content-Type': 'application/json',
+                'charset': 'UTF-8'
             }
+        });
+
+        const json = await response;
+        getById('alert_loading_img').style.display = 'none'
+
+        getById('alert_wrapper').addEventListener('click', addListener)
+
+        if (json.status === 200) {
+            getById('alert').style.display = 'flex'
+            getById('alert_text').innerText = "Message was send"
+        } else {
+            getById('alert').style.display = 'flex'
+            getById('alert_text').innerText = "Message not send"
+        }
     }
 })
 
@@ -155,6 +131,40 @@ const validateEmail = (email) => {
             /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
         );
 };
+/**------------------------------------------------------------------------------*/
+
+
+
+/** Function --------------------------------------------------------------------*/
+function setScroll(id) {
+    let elements = document.querySelectorAll(".sc");
+    let height = 0;
+    for (let i = 0; i < elements.length; i++) {
+        if (elements[i] === elements[id]) break
+        height += getFullHeightElem(elements[i]);
+    }
+    height -= 40;
+    window.scroll({top: height, behavior: `smooth`})
+}
+
+function getFullHeightElem(element) {
+    let marginLeft = parseInt(getComputedStyle(element, true).marginTop);
+    let marginRight = parseInt(getComputedStyle(element, true).marginBottom);
+    return element.offsetHeight + marginLeft + marginRight;
+}
+
+function addListener() {
+    getById('alert_wrapper').style.display = 'none'
+    getById('alert_loading_img').style.display = 'none'
+    getById('alert').style.display = 'none'
+    getById('alert_wrapper').removeEventListener('click', addListener)
+    getById('name').value = ""
+    getById('email').value = ""
+    getById('message').value = ""
+    getById('name').style.borderBottom = "1px solid #b2b2b2";
+    getById('email').style.borderBottom = "1px solid #b2b2b2";
+    getById('message').style.border = "1px solid #b2b2b2";
+}
 
 function sendEmailYouHaveNewVisitor(location) {
 
@@ -169,8 +179,7 @@ function sendEmailYouHaveNewVisitor(location) {
     });
 }
 
-displayPosition();
-async function displayPosition() {
+async function sendUserPosition() {
     let lat;
     let lon;
     navigator.geolocation.getCurrentPosition( pos => {
@@ -192,4 +201,12 @@ async function displayPosition() {
         method: 'GET',
     };
 }
+/**------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
 

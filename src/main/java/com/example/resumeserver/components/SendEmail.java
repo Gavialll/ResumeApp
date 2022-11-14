@@ -7,6 +7,7 @@ import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 
+// Class for send email.
 public class SendEmail {
     private String toEmail;
     private final Properties properties;
