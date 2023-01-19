@@ -5,6 +5,6 @@ RUN mvn -f /home/app/pom.xml clean install
 
 FROM tomcat
 
-COPY target/ROOT-1.0.war /usr/local/tomcat/webapps/
+COPY --chown=node:node target/ROOT-1.0.war /usr/local/tomcat/webapps/
 
 RUN mv /usr/local/tomcat/webapps/ROOT-1.0.war /usr/local/tomcat/webapps/ROOT.war
